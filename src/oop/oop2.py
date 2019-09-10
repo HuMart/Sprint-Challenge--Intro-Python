@@ -4,8 +4,10 @@
 # object is constructed.
 
 class GroundVehicle():
-    def __init__(self, num_wheels):
+    def __init__(self, num_wheels = 4): #set 4 wheels as defalult
         self.num_wheels = num_wheels
+    def drive(self): #set method drive()
+        return "vroooom"
 
     # TODO
 
@@ -19,6 +21,12 @@ class GroundVehicle():
 
 # TODO
 
+class Motorcycle(GroundVehicle): #set class Motorcycle inherit from GroundVehicle
+    def __init__(self):
+        super().__init__(2)  #change default num_wheels
+    def drive(self):
+        return "BRAAAP!!"  #change method drive()
+
 vehicles = [
     GroundVehicle(),
     GroundVehicle(),
@@ -30,3 +38,6 @@ vehicles = [
 # Go through the vehicles list and print the result of calling drive() on each.
 
 # TODO
+
+for v in vehicles:  #Call method drive() for each vejicle in the list
+    print(v.drive())
